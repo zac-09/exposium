@@ -27,17 +27,17 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install dependences
-        run: npm install --cwd ./client/
+        run: npm install ---prefix ./client
 
       # Runs a set of commands using the runners shell
       # - name: Run the test suite
-      #   run: npm run test --cwd ./client/
+      #   run: npm run test --prefix ./client
 
       - name: install dependences
-        run: npm install --cwd ./auth/
+        run: npm install --prefix ./auth
 
       # Runs a set of commands using the runners shell
       - name: Run the test suite
-        run: npm run test --cwd ./auth/
+        run: npm run test --prefix ./auth
         
     
