@@ -31,7 +31,8 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-         
+          base: auth-frontend
+          branch: prod
           
           title: 'add new feature'
          
