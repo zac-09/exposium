@@ -2,54 +2,49 @@
    
 
 
-name: Create auto Pull Request
+# name: Create auto Pull Request
 
 
-on:
+# on:
 
-  push:
-    branches: [ auth-frontend ]
+#   push:
+#     branches: [ auth-frontend ]
   
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+#   # Allows you to run this workflow manually from the Actions tab
+#   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  createPullRequest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+# # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# jobs:
+#   createPullRequest:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
 
-      - name: Make changes to pull request
-        run: date +%s > report.txt
 
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v3
-        with:
+#       - name: Create Pull Request
+#         id: cpr
+#         uses: peter-evans/create-pull-request@v3
+#         with:
          
-          commit-message: auto pull request
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: false
-          branch: prod
-          delete-branch: true
-          title: 'add new feature'
+#           commit-message: auto pull request
+#           committer: GitHub <noreply@github.com>
+#           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+#           signoff: false
          
-          labels: |
-            report
-            automated pr
-          assignees: zac-09
-          reviewers: zac-09
-          team-reviewers: |
-            owners
-            maintainers
+          
+#           title: 'add new feature'
+         
+#           labels: |
+#             report
+#             automated pr
+#           assignees: zac-09
+#           reviewers: zac-09
+#           team-reviewers: |
+#             owners
+#             maintainers
         
-          draft: false
+#           draft: false
 
-      - name: Check outputs
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+     
     

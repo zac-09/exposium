@@ -1,12 +1,11 @@
 
 
-name: Continous Intergration
+name: Testing code
 
 
 on:
 
-  push:
-    branches: [ auth-frontend ]
+
   pull_request:
     branches: [ prod ]
 
