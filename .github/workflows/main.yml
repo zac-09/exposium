@@ -7,8 +7,7 @@ on:
 
   push:
     branches: [ auth-frontend ]
-  pull_request:
-    branches: [ prod ]
+  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,5 +38,33 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run the test suite
         run: npm run test --prefix ./auth
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+
+      - name: Create Pull Request
+       
+        uses: peter-evans/create-pull-request@v3
+        with:
+         
+          commit-message: auto pull request
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          base: auth-frontend
+          branch: prod
+          
+          title: 'add new feature'
+         
+          labels: |
+            report
+            automated pr
+          assignees: zac-09
+          reviewers: zac-09
+          team-reviewers: |
+            owners
+            maintainers
         
     
