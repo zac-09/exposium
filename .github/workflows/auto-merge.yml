@@ -1,27 +1,4 @@
 
-
-#     dry-run: 
-# name: Create auto Pull Request
-
-# uses: peter-evans/create-pull-request@v3.6.0
-# with:
-
-
-  
-#   commit-message: automated pull request
-  
-
-#   committer: zac-09
-#   # The author name and email address in the format `Display Name <email@address.com>`. Defaults to the user who triggered the workflow run.
-
-#   author: zac-09
-
-#   # The pull request branch name.
-#   branch: prod
-  
-
-#   title: new pull test request
-    # The body of the pull request.
    
 
 
