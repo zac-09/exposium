@@ -1,11 +1,12 @@
 
 
-name: Testing code
+name: running tests
 
 
 on:
 
-
+  push:
+    branches: [ auth-frontend ]
   pull_request:
     branches: [ prod ]
 
