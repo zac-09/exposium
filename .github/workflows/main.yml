@@ -31,7 +31,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run the test suite
-        run: npm run test
+        run: npm run test --cwd ./client
+
+      - name: install dependences
+        run: npm install --cwd ./auth
+
+      # Runs a set of commands using the runners shell
+      - name: Run the test suite
+        run: npm run test --cwd ./auth
         
-      - name: Run the test suite for auth
-        run: npm run test
+    
