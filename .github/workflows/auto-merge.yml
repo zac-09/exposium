@@ -1,32 +1,25 @@
-# - name: Auto-Merge Pull Request
-#   # You may pin to the exact commit or the version.
-#   # uses: reitermarkus/automerge@12c8fbdca23bcf00589c591b0becd5280b5a654f
-#   uses: reitermarkus/automerge@v1.3.0
-#   with:
-#     # A GitHub Token other than the default `GITHUB_TOKEN` needs to be specified in order to be able to trigger other workflows.
 
-#     token: # default is ${{ github.token }}
-#     # Specify which merge method to use. By default, will select the first one available in this order: `merge`, `squash`, `rebase`
-
-#     merge-method: # optional
-#     # Use the pull request title as the commit message when squashing.
-
-#     squash-title: # optional
-#     # When any of the labels in this comma-separated list is applied to a pull request, it will not be merged automatically.
-
-#     do-not-merge-labels: # optional
-#     # Comma-separated list of labels that are required to be applied to a pull request for it to be merged automatically.
-
-#     required-labels: # optional
-#     # Try merging the specified pull request automatically. For example, you can pass an input from a `workflow_dispatch` event.
-
-#     pull-request: # optional
-#     # Comma-separated list of required author associations for the pull request author. (By default, pull requests by any author are allowed.)
-
-#     pull-request-author-associations: # optional
-#     # Comma-separated list of required author associations for the review author. (By default, reviews by authors which are a `COLLABORATOR`, `MEMBER` or `OWNER` are allowed.)
-
-#     review-author-associations: # optional
-#     # If set to `true`, will not actually merge pull requests but still perform all other checks.
 
 #     dry-run: 
+- name: Create Pull Request
+
+  uses: peter-evans/create-pull-request@v3.6.0
+  with:
+  
+
+   
+    commit-message: automated pull request
+    
+
+    committer: zac-09
+    # The author name and email address in the format `Display Name <email@address.com>`. Defaults to the user who triggered the workflow run.
+
+    author: zac-09
+  
+    # The pull request branch name.
+    branch: prod
+   
+  
+    title: new pull test request
+    # The body of the pull request.
+   
